@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formName.typeName의 예</title>
+    <style>
+        label {
+            float: left;
+            width: 80px;
+        }
+
+        input,
+        label {
+            display: block;
+            margin-botton: 10px;
+            ;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form name="frm">
+        <label for="myId">ID: </label>
+        <input type="text" id="myID" name=myID>
+        <label for="pwd">password: </label>
+        <input type="text" id="pwd" name="pwd">
+
+        <input type="button" name="send" value="로그인" />
+    </form>
+
+    <script>
+        var frm = document.frm; //form 객체설정
+        var myID = frm.myID; // id입력란(myId) 객체설정
+        var pwd = frm.pwd; //pwd입력란(pwd) 객체설정
+        var send_btn = document.frm.send; //전송버튼객체지정
+
+        send_btn.onclick = function () {
+            var newID = myID.value,
+                newpwd = pwd.valye;
+            //빈값에 대한 검사 실시
+            if (newID == '' || newpwd == '') {
+                alert('아이디 또는 패스워드가 입력되지 않았습니다');
+            } else {
+                alert(myID.value + '님 환영합니다!');
+            }
+        };
+    </script>
+</body>
+
+</html>
